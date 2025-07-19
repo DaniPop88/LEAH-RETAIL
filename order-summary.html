@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leahmae Camen Retail Mart | Urban Boutique in Angeles City</title>
+    <meta name="description" content="Leahmae Camen Retail Mart: Your local neighborhood boutique, offering everyday essentials, lifestyle products, and affordable fashion in Angeles City.">
+    <meta name="author" content="Leahmae Camen Retail Mart">
+    <link rel="icon" type="image/png" href="image/FAVICON.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+    <style>
+        :root {
+            --primary: #294c3b;
+            --primary-dark: #1c3527;
+            --header-bg: #20392c;
+            --accent: #f6a823;
+            --accent-dark: #d18c00;
+            --background: #f7fafd;
+            --surface: #fff;
+            --text: #222;
+            --border: #e5e5e5;
+            --shadow: 0 8px 32px rgba(43,76,59,0.13);
+            --radius: 18px;
+        }
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1100;
+            background: var(--header-bg);
+            color: #fff;
+            box-shadow: var(--shadow);
+            min-height: 128px;
+            width: 100%;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2vw;
+        }
+        .header-inner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 128px;
+            position: relative;
+        }
+        .header-brand {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 32px;
+            height: 100%;
+            min-width: 420px;
+        }
+        .header-logo-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+            justify-content: center;
+            gap: 0px;
+        }
+        .header-logo-block img {
+            height: 82px;
+            width: auto;
+            margin-top: 0;
+            margin-bottom: 0px;
+        }
+        .brand-txt-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            line-height: 1.13;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            min-width: 220px;
+            margin-left: 0;
+            margin-top: 0px;
+        }
+        .brand-txt-block .brand-title {
+            font-size: 2.3rem;
+            font-weight: 900;
+            letter-spacing: 1.3px;
+            color: #fff;
+            margin-bottom: 5px;
+            margin-top: 0px;
+            white-space: nowrap;
+        }
+        .brand-txt-block .brand-sub {
+            font-size: 1.21rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color: #ffe6b0;
+            margin-top: 2px;
+            margin-bottom: 0px;
+            line-height: 1.1;
+            white-space: pre-line;
+        }
+        nav {
+            display: flex;
+            gap: 2.3rem;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.29rem;
+            padding: 11px 0 11px 0;
+            border-radius: 6px;
+            display: inline-block;
+            transition: color 0.17s, background 0.17s;
+            position: relative;
+            background: none;
+            margin: 0 2px;
+        }
+        nav a.active, nav a:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 11px 18px;
+            transition: background 0.17s, color 0.17s;
+        }
+        .nav-section-label {
+            display: block;
+            font-size: 1.12rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        .cart-icon-btn {
+            background: var(--accent);
+            border: none;
+            color: var(--primary-dark);
+            border-radius: 50%;
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 28px;
+            box-shadow: 0 2px 8px rgba(246,168,35,0.13);
+            transition: background 0.2s;
+            position: relative;
+        }
+        .cart-icon-btn:hover {
+            background: var(--accent-dark);
+        }
+        .cart-icon {
+            width: 34px;
+            height: 34px;
+            display: block;
+        }
+        .cart-total-badge {
+            position: absolute;
+            top: 10px;
+            right: 11px;
+            background: #fff;
+            color: var(--accent-dark);
+            font-weight: bold;
+            border-radius: 12px;
+            font-size: 1.22rem;
+            padding: 2px 10px;
+            min-width: 32px;
+            text-align: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.11);
+        }
+        .burger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 62px;
+            height: 62px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+            z-index: 1200;
+            position: relative;
+        }
+        .burger span {
+            display: block;
+            width: 38px;
+            height: 6px;
+            background: #fff;
+            margin: 7px 0;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        /* Mobile styles for burger and cart button placement and nav menu */
+        @media (max-width: 950px) {
+            .header-inner {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                height: 128px;
+                min-height: 128px;
+                position: relative;
+            }
+            .burger {
+                display: flex;
+                position: absolute;
+                left: 8px;
+                top: 50%;
+                margin-left: 0;
+                transform: translateY(-50%);
+            }
+            .cart-icon-btn {
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                margin-left: 0;
+                transform: translateY(-50%);
+            }
+            .header-brand {
+                min-width: unset;
+                width: auto;
+                margin-left: 80px;
+                margin-right: 80px;
+                gap: 16px;
+            }
+            .brand-txt-block .brand-title { font-size: 1.43rem; }
+            .brand-txt-block .brand-sub { font-size: 1.01rem; }
+            nav {
+                position: fixed;
+                top: 128px;
+                left: 0;
+                right: 0;
+                background: var(--header-bg);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                box-shadow: var(--shadow);
+                display: none;
+                border-bottom-left-radius: var(--radius);
+                border-bottom-right-radius: var(--radius);
+                z-index: 1201;
+                max-height: 67vh;
+                overflow-y: auto;
+            }
+            nav.open {
+                display: flex;
+                animation: fadeInMenu 0.3s;
+            }
+            nav a {
+                padding: 18px 0;
+                font-size: 1.26rem;
+                border-radius: 0;
+                border-bottom: 1px solid rgba(255,255,255,0.10);
+                width: 100%;
+                text-align: left;
+            }
+        }
+        @keyframes fadeInMenu {
+            from { opacity: 0; transform: translateY(-16px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        main { margin: 2.7rem 0 1rem 0; }
+        section { margin-bottom: 2.7rem; padding: 0 1rem; }
+        .hero {
+            text-align: center;
+            background: linear-gradient(110deg, var(--primary-dark) 60%, var(--accent-dark) 100%);
+            color: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.8rem 1.7rem 2.4rem 1.7rem;
+            margin-bottom: 3.2rem;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            letter-spacing: 1px;
+        }
+        .hero h2 {
+            font-size: 1.32rem;
+            font-weight: 500;
+            margin-bottom: 1.1rem;
+            letter-spacing: 0.5px;
+            color: #ffe6b0;
+        }
+        .hero p {
+            max-width: 600px;
+            margin: 0.8rem auto 0.2rem auto;
+            font-size: 1.19rem;
+            line-height: 1.6;
+        }
+        .tagline {
+            font-size: 1.11rem;
+            margin-top: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #ffe6b0;
+        }
+        .about-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 1.5rem;
+            margin-bottom: 2.2rem;
+        }
+        .about-section h2 { font-size: 1.78rem; color: var(--primary-dark); }
+        .about-section p { font-size: 1.13rem; color: #333; }
+        .core-values {
+            margin: 1.2rem 0 0.3rem 0;
+            padding: 0;
+            list-style: none;
+        }
+        .core-values li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+            font-size: 1.13rem;
+            color: var(--primary-dark);
+        }
+        .core-values li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        .vision {
+            margin-top: 1.1rem;
+            font-weight: 600;
+            font-size: 1.16rem;
+            color: var(--accent-dark);
+        }
+        .products-section { margin-top: 2.5rem; }
+        .products-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+        .products-header h3 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.4rem;
+        }
+        .product-card {
+            background: var(--surface);
+            border-radius: 13px;
+            box-shadow: 0 2px 8px rgba(43,76,59,0.10);
+            padding: 1.18rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        .product-card img {
+            width: 124px;
+            height: 124px;
+            object-fit: cover;
+            margin-bottom: 0.95rem;
+            border-radius: 7px;
+            background: #eee;
+            box-shadow: 0 2px 9px rgba(43,76,59,0.09);
+        }
+        .product-title {
+            font-size: 1.17rem;
+            font-weight: 700;
+            margin-bottom: 0.22rem;
+            text-align: center;
+            color: var(--primary-dark);
+        }
+        .product-desc {
+            font-size: 1.02rem;
+            color: #666;
+            margin-bottom: 0.55rem;
+            text-align: center;
+        }
+        .product-meta {
+            display: flex;
+            gap: 1.1rem;
+            font-size: 0.99rem;
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+        }
+        .product-price {
+            font-size: 1.16rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+        }
+        .add-cart-btn {
+            margin-top: 0.6rem;
+            background: var(--accent);
+            border: none;
+            color: var(--primary-dark);
+            font-weight: 700;
+            padding: 9px 22px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1.06rem;
+            box-shadow: 0 2px 7px rgba(246,168,35,0.08);
+            transition: background 0.2s, color 0.2s;
+        }
+        .add-cart-btn:hover {
+            background: var(--accent-dark);
+            color: #fff;
+        }
+        @media (max-width: 700px) {
+            .products-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            .products-header h3 { font-size: 1.33rem; }
+            .products-grid { grid-template-columns: 1fr; }
+        }
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.4rem;
+            margin: 2.2rem 0 0.7rem 0;
+        }
+        .service-card {
+            background: var(--surface);
+            border-radius: 11px;
+            box-shadow: 0 2px 8px rgba(43,76,59,0.13);
+            padding: 1.12rem 1rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .service-card h4 {
+            color: var(--accent);
+            font-size: 1.17rem;
+            margin: 0 0 0.2rem 0;
+            font-weight: 700;
+        }
+        .service-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+        .service-card ul li {
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+        .cart-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(43,76,59,0.18);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2002;
+        }
+        .cart-modal {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 32px rgba(43,76,59,0.18);
+            padding: 2.2rem 2.3rem;
+            min-width: 340px;
+            max-width: 96vw;
+            min-height: 260px;
+            max-height: 86vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .cart-modal h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1.2rem;
+        }
+        .cart-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: none;
+            border: none;
+            font-size: 1.7rem;
+            color: var(--accent-dark);
+            cursor: pointer;
+        }
+        .cart-list { margin-bottom: 1.1rem; }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 0;
+            border-bottom: 1px solid #eee;
+            gap: 0.7rem;
+        }
+        .cart-item-title {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        .cart-item-qty {
+            font-size: 1.05rem;
+            color: #444;
+        }
+        .cart-item-remove {
+            background: var(--accent);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: 5px;
+            padding: 4px 12px;
+            font-size: 1.05rem;
+            cursor: pointer;
+        }
+        .cart-item-remove:hover {
+            background: var(--accent-dark);
+            color: #fff;
+        }
+        .cart-empty {
+            text-align: center;
+            color: #888;
+            margin: 1.7rem 0 2.5rem 0;
+            font-size: 1.05rem;
+        }
+        .cart-total {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 1.19rem;
+            margin-bottom: 1.1rem;
+            text-align: right;
+        }
+        .cart-checkout-btn {
+            background: var(--primary-dark);
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 13px 38px;
+            font-size: 1.13rem;
+            font-weight: 700;
+            cursor: pointer;
+            float: right;
+            transition: background 0.2s;
+        }
+        .cart-checkout-btn:hover {
+            background: var(--accent-dark);
+            color: var(--primary);
+        }
+        @media (max-width: 500px) {
+            .cart-modal { padding: 1.1rem 0.7rem; min-width: 96vw; }
+        }
+        .contact-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 1.5rem;
+            margin-bottom: 2.2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+        }
+        .contact-info { font-size: 1.12rem; }
+        .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 7px;
+            border: 1px solid var(--border);
+            font-size: 1.09rem;
+            font-family: inherit;
+        }
+        .contact-form textarea { min-height: 90px; resize: vertical; }
+        .contact-form button {
+            background: var(--accent);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: 7px;
+            padding: 13px 22px;
+            font-size: 1.11rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover { background: var(--accent-dark); color: #fff; }
+        .contact-channels { margin-top: 1.1rem; font-size: 1.03rem; }
+        .contact-channels a { color: var(--accent-dark); text-decoration: underline; }
+        @media (max-width: 850px) { .contact-section { grid-template-columns: 1fr; } }
+        .testimonials-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 1.5rem;
+            margin-bottom: 2.2rem;
+        }
+        .testimonials-section h2 { color: var(--primary-dark); margin-bottom: 1.2rem; }
+        .testimonial-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.4rem;
+        }
+        .testimonial-card {
+            background: #f9f6ee;
+            border-radius: 9px;
+            box-shadow: 0 1px 6px rgba(43,76,59,0.06);
+            padding: 1.1rem 1rem;
+            font-size: 1.08rem;
+            color: #222;
+            margin-bottom: 0.5rem;
+        }
+        .testimonial-cite {
+            margin-top: 0.5rem;
+            font-size: 0.99rem;
+            color: var(--accent-dark);
+            font-weight: 600;
+        }
+        .faq-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 1.5rem;
+            margin-bottom: 2.2rem;
+        }
+        .faq-section h2 { color: var(--primary-dark); margin-bottom: 1.2rem; }
+        .faq-list { margin: 0; padding: 0; list-style: none; }
+        .faq-list li { margin-bottom: 1.2rem; }
+        .faq-q {
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin-bottom: 0.2rem;
+            display: block;
+            font-size: 1.08rem;
+        }
+        .faq-a { font-size: 1.07rem; color: #333; }
+        .delivery-section {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.2rem 1.5rem;
+            margin-bottom: 2.2rem;
+        }
+        .delivery-section h2 { color: var(--primary-dark); margin-bottom: 1.2rem; }
+        .delivery-list {
+            margin: 1.1rem 0 0.7rem 0;
+            padding-left: 1.5rem;
+            font-size: 1.10rem;
+        }
+        .delivery-label { font-weight: 700; color: var(--accent-dark); }
+        .delivery-hours, .delivery-fee, .delivery-payment, .delivery-channels {
+            margin: 0.7rem 0; font-size: 1.08rem;
+        }
+        footer {
+            background: var(--header-bg);
+            color: #fff;
+            padding: 2.7rem 0 1.5rem 0;
+            margin-top: 3rem;
+        }
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2vw;
+        }
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2rem;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-brand { flex: 1 1 220px; }
+        .footer-logo {
+            height: 38px;
+            width: auto;
+            margin-bottom: 0.7rem;
+        }
+        .footer-links {
+            flex: 1 1 180px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: underline;
+            font-size: 1.03rem;
+        }
+        .footer-contact, .footer-meta {
+            flex: 1 1 220px;
+            font-size: 1.04rem;
+            margin-bottom: 1.2rem;
+        }
+        .footer-meta span {
+            display: block;
+            font-size: 1.02rem;
+            color: #ffe6b0;
+            margin-bottom: 0.2rem;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: #ffe6b0;
+        }
+        @media (max-width: 900px) {
+            .footer-row { flex-direction: column; gap: 1.3rem; }
+            .footer-brand, .footer-contact, .footer-meta, .footer-links { flex: 1 1 100%; }
+        }
+        ::-webkit-scrollbar { width: 8px; background: #eee; }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <button class="burger" aria-label="Menu" onclick="toggleBurger()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="header-brand">
+                <div class="header-logo-block">
+                    <img src="image/LOGO.png" alt="Leahmae Camen Retail Mart Logo">
+                    <div class="brand-txt-block">
+                        <span class="brand-title">Camen Retail Mart</span>
+                        <span class="brand-sub">Leahmae Camen<br>Barangay San Pedro, Angeles City</span>
+                    </div>
+                </div>
+            </div>
+            <nav id="nav-menu">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#products">Products & Services</a>
+                <a href="#contact">Contact</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <a href="#delivery">Delivery Info</a>
+            </nav>
+            <button class="cart-icon-btn" onclick="openCart()" id="cart-icon-btn" title="View Cart">
+                <svg class="cart-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 6h15l-1.5 9h-13z" stroke="#294c3b" stroke-width="2" fill="#f6a823"/>
+                    <circle cx="9" cy="21" r="1.5" fill="#294c3b"/>
+                    <circle cx="18" cy="21" r="1.5" fill="#294c3b"/>
+                </svg>
+                <span class="cart-total-badge" id="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <h1>Welcome to Leahmae Camen Retail Mart</h1>
+            <h2>Your Local Urban Boutique in Angeles City</h2>
+            <p>
+                At Leahmae Camen Retail Mart, we offer a carefully selected mix of everyday essentials, lifestyle products, and affordable fashion — all in one convenient store. Located in the heart of Barangay San Pedro, Angeles City, our boutique mart is a favorite among residents for its wide selection, friendly service, and presyong pang-barangay.<br><br>
+                Whether you're shopping for pantry needs, trendy home items, or quality personal care products, Leahmae Camen Retail Mart is your trusted community store — always ready to serve.
+            </p>
+            <div class="tagline">Sulit. Mura. Malapit. Para sa'yo.</div>
+        </section>
+        <section class="about-section" id="about">
+            <h2>About Leahmae Camen Retail Mart</h2>
+            <p>
+                Founded in 2019, Leahmae Camen Retail Mart was created with one goal: to make stylish, practical, and affordable products accessible to every Filipino household. We began as a humble sari-sari store along Acacia Street and have grown into a well-loved retail mart serving Barangay San Pedro and nearby communities in Angeles City.
+            </p>
+            <ul class="core-values">
+                <li>Accessibility: From daily goods to lifestyle finds, we keep our products abot-kaya at abot-kamay.</li>
+                <li>Community First: We believe in kapwa at malasakit — that’s why we support local suppliers and always listen to our customers' needs.</li>
+                <li>Customer Experience: We prioritize a clean, organized shopping experience, whether you're visiting us in-store or ordering online.</li>
+            </ul>
+            <div class="vision">Vision: To be recognized as a go-to neighborhood boutique mart across Central Luzon, providing value and convenience without compromising on quality.</div>
+        </section>
+        <section class="products-section" id="products">
+            <div class="products-header">
+                <h3>Featured Products</h3>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <div class="product-card">
+                    <img src="image/placeholder1.png" alt="Product Image">
+                    <div class="product-title">Rice 5kg Pack</div>
+                    <div class="product-desc">Premium local rice, perfect for everyday meals.</div>
+                    <div class="product-meta">
+                        <span>Qty: 10</span>
+                        <span class="product-price">&#8369;299.00</span>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Rice 5kg Pack', 299, 1)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="image/placeholder2.png" alt="Product Image">
+                    <div class="product-title">Bath Soap Trio</div>
+                    <div class="product-desc">Gentle, fresh, and long-lasting fragrance.</div>
+                    <div class="product-meta">
+                        <span>Qty: 7</span>
+                        <span class="product-price">&#8369;74.50</span>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Bath Soap Trio', 74.5, 1)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="image/placeholder3.png" alt="Product Image">
+                    <div class="product-title">Men's Casual Shirt</div>
+                    <div class="product-desc">Stylish and comfortable everyday wear.</div>
+                    <div class="product-meta">
+                        <span>Qty: 5</span>
+                        <span class="product-price">&#8369;199.99</span>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Men\'s Casual Shirt', 199.99, 1)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="image/placeholder4.png" alt="Product Image">
+                    <div class="product-title">Kitchen Organizer Set</div>
+                    <div class="product-desc">Durable plastic organizers for a tidy home.</div>
+                    <div class="product-meta">
+                        <span>Qty: 8</span>
+                        <span class="product-price">&#8369;145.00</span>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Kitchen Organizer Set', 145, 1)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="image/placeholder5.png" alt="Product Image">
+                    <div class="product-title">Baby Wipes 80s</div>
+                    <div class="product-desc">Safe and gentle for babies and family use.</div>
+                    <div class="product-meta">
+                        <span>Qty: 12</span>
+                        <span class="product-price">&#8369;99.00</span>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Baby Wipes 80s', 99, 1)">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="image/placeholder6.png" alt="Product Image">
+                    <div class="product-title">Skincare Kit</div>
+                    <div class="product-desc">Local beauty essentials for healthy skin.</div>
+                    <div class="product-meta">
+                        <span>Qty: 6</span>
+                        <span class="product-price">&#8369;259.50</span>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Skincare Kit', 259.5, 1)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="services-list">
+                <div class="service-card">
+                    <h4>🛒 Everyday Essentials</h4>
+                    <ul>
+                        <li>Rice, canned goods, biscuits, condiments, instant coffee</li>
+                        <li>Bath soaps, shampoo, laundry detergent, dishwashing liquid</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h4>👗 Urban Lifestyle Products</h4>
+                    <ul>
+                        <li>Affordable apparel for men, women & kids</li>
+                        <li>Accessories, bags, slippers, caps, casual fashion items</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h4>🏡 Home & Living</h4>
+                    <ul>
+                        <li>Kitchen tools, plastic organizers, home décor</li>
+                        <li>Eco-friendly items and reusable storage products</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h4>🍼 Baby & Family Care</h4>
+                    <ul>
+                        <li>Diapers, wipes, baby lotion, feeding bottles, vitamins</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h4>🧴 Self-Care Corner</h4>
+                    <ul>
+                        <li>Skincare, local beauty brands, wellness and grooming kits</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h4>💻 Online Order & Delivery Services</h4>
+                    <ul>
+                        <li>Facebook & Viber ordering</li>
+                        <li>Same-day delivery within Angeles City</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="cart-overlay" id="cart-overlay">
+            <div class="cart-modal">
+                <button class="cart-close" onclick="closeCart()">&times;</button>
+                <h4>Your Cart</h4>
+                <div class="cart-list" id="cart-list">
+                </div>
+                <div class="cart-total" id="cart-total">Total: &#8369;0.00</div>
+                <button class="cart-checkout-btn" onclick="checkout()">Checkout</button>
+                <div id="cart-empty-msg" class="cart-empty">Your cart is empty.</div>
+            </div>
+        </div>
+        <section class="contact-section" id="contact">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <div><b>Store Address:</b><br>
+                Leahmae Camen Retail Mart<br>
+                #45 Acacia Street, Barangay San Pedro, City of Angeles, Pampanga, 2009, Philippines</div>
+                <div><b>Email:</b> <a href="mailto:contact@leahmaecamen-mart.com">contact@leahmaecamen-mart.com</a></div>
+                <div><b>Phone:</b> <a href="tel:+639573140289">+63 957 314 0289</a></div>
+                <div><b>Business Hours:</b><br>
+                    Monday to Saturday: 8:00 AM – 6:00 PM<br>
+                    Sunday: 9:00 AM – 2:00 PM
+                </div>
+                <div class="contact-channels">
+                    <b>Order via Viber & Messenger:</b><br>
+                    Viber: <a href="viber://chat?number=+639573140289">+63 957 314 0289</a><br>
+                    Facebook: <a href="https://facebook.com/leahmaecamenmart" target="_blank">facebook.com/leahmaecamenmart</a>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm" autocomplete="off" onsubmit="contactSubmit(event)">
+                <input type="text" name="name" id="contactName" placeholder="Your Name" required>
+                <input type="email" name="email" id="contactEmail" placeholder="Your Email" required>
+                <textarea name="message" id="contactMessage" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+                <div id="contactSuccess" style="display:none;color:var(--accent-dark);font-weight:600;margin-top:8px;">Thank you! Your message has been sent.</div>
+            </form>
+        </section>
+        <section class="testimonials-section" id="testimonials">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonial-list">
+                <div class="testimonial-card">
+                    <span>"Laging malinis at kompleto ang tinda nila. Friendly pa ang staff!"</span>
+                    <span class="testimonial-cite">– Lorie Ann S., Barangay Salapungan</span>
+                </div>
+                <div class="testimonial-card">
+                    <span>"Nakakatuwa kasi may damit na rin silang binebenta — affordable and maganda quality!"</span>
+                    <span class="testimonial-cite">– Jenny C., Angeles Proper</span>
+                </div>
+                <div class="testimonial-card">
+                    <span>"Fast delivery and maayos yung packaging. Very convenient."</span>
+                    <span class="testimonial-cite">– Joshua P., Barangay Cutcut</span>
+                </div>
+            </div>
+        </section>
+        <section class="faq-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <ul class="faq-list">
+                <li>
+                    <span class="faq-q">Q: Do you deliver outside Angeles City?</span>
+                    <span class="faq-a">A: Currently, we only deliver within Angeles City and nearby barangays. For bulk orders outside the area, please message us directly.</span>
+                </li>
+                <li>
+                    <span class="faq-q">Q: Do you have a return policy?</span>
+                    <span class="faq-a">A: Yes, we allow returns within 3 days for damaged or defective items. Just bring your official receipt and original packaging.</span>
+                </li>
+                <li>
+                    <span class="faq-q">Q: Can I pay via GCash or PayMaya?</span>
+                    <span class="faq-a">A: Yes! We accept GCash, Maya, and COD (cash on delivery) for online orders.</span>
+                </li>
+            </ul>
+        </section>
+        <section class="delivery-section" id="delivery">
+            <h2>Delivery Information</h2>
+            <div>
+                <span class="delivery-label">Delivery Coverage:</span>
+                <ul class="delivery-list">
+                    <li>Barangay San Pedro</li>
+                    <li>Salapungan</li>
+                    <li>Pulungbulu</li>
+                    <li>Cutcut</li>
+                    <li>Mining</li>
+                    <li>Santo Rosario</li>
+                </ul>
+            </div>
+            <div class="delivery-hours">
+                <span class="delivery-label">Delivery Hours:</span><br>
+                Monday to Saturday: 9:00 AM – 5:30 PM<br>
+                Sunday: 9:00 AM – 1:30 PM
+            </div>
+            <div class="delivery-fee">
+                <span class="delivery-label">Delivery Fee:</span><br>
+                &#8369;50 flat rate within Angeles City<br>
+                <b>FREE delivery for orders above &#8369;1,000</b>
+            </div>
+            <div class="delivery-payment">
+                <span class="delivery-label">Payment Options:</span><br>
+                GCash<br>
+                COD<br>
+                Bank transfer (BPI or BDO upon request)
+            </div>
+            <div class="delivery-channels">
+                <span class="delivery-label">Order Channels:</span><br>
+                Facebook Messenger<br>
+                Viber<br>
+                Walk-in reservation for same-day pick-up
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-brand">
+                    <img src="image/LOGO.png" alt="Leahmae Camen Retail Mart Logo" class="footer-logo">
+                    <div>#45 Acacia Street, Barangay San Pedro, City of Angeles, Pampanga, 2009, Philippines</div>
+                </div>
+                <div class="footer-contact">
+                    <div><strong>Contact:</strong></div>
+                    <div>Email: <a href="mailto:contact@leahmaecamen-mart.com" style="color:#ffe6b0;">contact@leahmaecamen-mart.com</a></div>
+                    <div>Phone: <a href="tel:+639573140289" style="color:#ffe6b0;">+63 957 314 0289</a></div>
+                    <div>Business Hours: Mon-Sat 8am–6pm, Sun 9am–2pm</div>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="refund-policy.html">Refund Policy</a>
+                </div>
+                <div class="footer-meta">
+                    <span>Business Registration #: 0045241735</span>
+                    <span>DTI Registered Name: Leahmae Camen Retail Mart – Angeles Branch</span>
+                    <span>VAT Registered: Yes | BIR TIN: 835-987-654-000</span>
+                    <span>Owner: Leahmae S. Camen | Est. August 2019</span>
+                    <span>Languages: Filipino, Kapampangan, English</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Leahmae Camen Retail Mart. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleBurger() {
+            const nav = document.getElementById('nav-menu');
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+                document.body.classList.remove('nav-open');
+                document.body.style.overflow = '';
+            } else {
+                nav.classList.add('open');
+                document.body.classList.add('nav-open');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('nav-menu');
+            const burger = document.querySelector('.burger');
+            // Only close nav if click is outside nav and burger
+            if (window.innerWidth <= 950) {
+                if (nav.classList.contains('open') &&
+                  !nav.contains(e.target) &&
+                  !burger.contains(e.target)) {
+                    nav.classList.remove('open');
+                    document.body.classList.remove('nav-open');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 6) {
+                header.style.boxShadow = '0 8px 32px rgba(43,76,59,0.17)';
+            } else {
+                header.style.boxShadow = '0 8px 32px rgba(43,76,59,0.13)';
+            }
+        });
+        let cart = [];
+        function openCart() {
+            document.getElementById('cart-overlay').style.display = 'flex';
+            renderCart();
+        }
+        function closeCart() {
+            document.getElementById('cart-overlay').style.display = 'none';
+        }
+        function addToCart(title, price, qty) {
+            const idx = cart.findIndex(item => item.title === title);
+            if (idx > -1) {
+                cart[idx].qty += qty;
+            } else {
+                cart.push({ title, price, qty });
+            }
+            renderCart();
+            updateCartBadge();
+        }
+        function removeFromCart(title) {
+            cart = cart.filter(item => item.title !== title);
+            renderCart();
+            updateCartBadge();
+        }
+        function renderCart() {
+            const list = document.getElementById('cart-list');
+            const totalDiv = document.getElementById('cart-total');
+            const emptyMsg = document.getElementById('cart-empty-msg');
+            list.innerHTML = '';
+            if (cart.length === 0) {
+                emptyMsg.style.display = 'block';
+                totalDiv.style.display = 'none';
+                document.querySelector('.cart-checkout-btn').style.display = 'none';
+                return;
+            }
+            emptyMsg.style.display = 'none';
+            totalDiv.style.display = 'block';
+            document.querySelector('.cart-checkout-btn').style.display = 'inline-block';
+            let total = 0;
+            cart.forEach(item => {
+                total += item.price * item.qty;
+                const row = document.createElement('div');
+                row.className = 'cart-item';
+                row.innerHTML = `
+                    <span class="cart-item-title">${item.title}</span>
+                    <span class="cart-item-qty">x${item.qty}</span>
+                    <span class="product-price">&#8369;${(item.price * item.qty).toFixed(2)}</span>
+                    <button class="cart-item-remove" onclick="removeFromCart('${item.title}')">Remove</button>
+                `;
+                list.appendChild(row);
+            });
+            totalDiv.innerHTML = `Total: &#8369;${total.toFixed(2)}`;
+        }
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-badge');
+            let totalQty = 0;
+            cart.forEach(item => totalQty += item.qty);
+            badge.textContent = totalQty;
+        }
+        function checkout() {
+            window.location.href = "order-summary.html";
+        }
+        function contactSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contactSuccess').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('contactSuccess').style.display = 'none';
+                document.getElementById('contactName').value = "";
+                document.getElementById('contactEmail').value = "";
+                document.getElementById('contactMessage').value = "";
+            }, 3200);
+        }
+        document.querySelectorAll('nav a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 130,
+                            behavior: 'smooth'
+                        });
+                    }
+                    document.getElementById('nav-menu').classList.remove('open');
+                    document.body.classList.remove('nav-open');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        updateCartBadge();
+    </script>
+</body>
+</html>
