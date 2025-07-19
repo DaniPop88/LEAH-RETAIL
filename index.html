@@ -201,7 +201,15 @@
             border-radius: 3px;
             transition: all 0.3s;
         }
-        /* Mobile styles for burger and cart button placement and nav menu */
+        @media (max-width: 1400px) {
+            .container { max-width: 98vw; }
+        }
+        @media (max-width: 1200px) {
+            nav { gap: 1.2rem; }
+            .header-brand { min-width: 320px; gap: 20px; }
+            .brand-txt-block .brand-title { font-size: 2rem; }
+            .brand-txt-block .brand-sub { font-size: 1.07rem; }
+        }
         @media (max-width: 950px) {
             .header-inner {
                 flex-direction: row;
@@ -1039,7 +1047,6 @@
         document.addEventListener('click', function(e) {
             const nav = document.getElementById('nav-menu');
             const burger = document.querySelector('.burger');
-            // Only close nav if click is outside nav and burger
             if (window.innerWidth <= 950) {
                 if (nav.classList.contains('open') &&
                   !nav.contains(e.target) &&
